@@ -22,6 +22,15 @@ const FeedbackSchema = new Schema({
     Feedback_description: {
         type: String,
     },
+    Feedback_reply: {
+        User_id: {
+            type: String,
+        },
+        Reply: {
+            type: String,
+        },
+    },
     
+
 });
 module.exports = mongoose.model('Feedback', FeedbackSchema);
