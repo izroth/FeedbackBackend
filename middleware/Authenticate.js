@@ -16,7 +16,8 @@ const authenticate = async (req, res, next) => {
         if (!user) {
             return res.status(404).json({ msg: errors.invalid_token });
         }
-        req.user = user;
+        
+        req.userid = decoded.id;
         next();
     } catch (err) {
         res.status(401).json({ msg: errors.invalid_token });
